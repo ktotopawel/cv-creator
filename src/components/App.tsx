@@ -25,7 +25,11 @@ export default function App() {
         setSchools={setSchools}
         setWorkplaces={setWorkplaces}
       ></Form>
-      <Preview personalData={personalData}></Preview>
+      <Preview
+        personalData={personalData}
+        schools={schools}
+        workplaces={workplaces}
+      ></Preview>
     </>
   );
 }

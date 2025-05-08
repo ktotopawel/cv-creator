@@ -1,15 +1,15 @@
 import Education from "./Education";
 import Personal from "./Personal";
-import type { PersonalType, SchoolType, WorkType } from "./types";
+import type { PersonalType, SchoolType, Setter, WorkType } from "./types";
 import Work from "./Work";
 
 type FormProps = {
   personal: PersonalType;
   schools: SchoolType[];
   workplaces: WorkType[];
-  setPersonalData: React.Dispatch<React.SetStateAction<PersonalType>>;
-  setSchools: React.Dispatch<React.SetStateAction<SchoolType[]>>;
-  setWorkplaces: React.Dispatch<React.SetStateAction<WorkType[]>>;
+  setPersonalData: Setter<PersonalType>;
+  setSchools: Setter<SchoolType[]>;
+  setWorkplaces: Setter<WorkType[]>;
 };
 
 export default function Form({

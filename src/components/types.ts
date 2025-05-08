@@ -6,16 +6,19 @@ export type PersonalType = {
 };
 
 export type SchoolType = {
+  UUID: string;
   schoolName: string;
   field: string;
-  educationStart: Date;
-  educationEnd: Date;
+  educationStart: string;
+  educationEnd: string;
 };
 
 export type WorkType = {
   workplace: string;
   position: string;
   responsibilities: string;
-  workStart: Date;
-  workEnd: Date;
+  workStart: string;
+  workEnd: string;
 };
+
+export type Setter<type> = React.Dispatch<React.SetStateAction<type>>;
