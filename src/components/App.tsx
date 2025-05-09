@@ -17,6 +17,7 @@ export default function App() {
     softSkills: [],
     hardSkills: [],
     languages: [],
+    summary: "",
   });
 
   const [schools, setSchools] = useState<SchoolType[]>([]);

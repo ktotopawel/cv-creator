@@ -23,6 +23,19 @@ export default function Preview({
           Phone number: {personalData.phoneNumber} Email Address:{" "}
           {personalData.email}
         </p>
+        <ul>
+          {personalData.softSkills.map((softSkill) => (
+            <li
+              key={
+                personalData.softSkills[
+                  personalData.softSkills.indexOf(softSkill)
+                ]
+              }
+            >
+              {softSkill}
+            </li>
+          ))}
+        </ul>
         <h2>Schools:</h2>
         {schools.map((school) => {
           return (

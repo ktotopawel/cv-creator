@@ -11,6 +11,7 @@ export default function Education({ schools, setSchools }: EducationFormProps) {
       UUID: crypto.randomUUID(),
       schoolName: "",
       field: "",
+      degree: "",
       educationStart: "",
       educationEnd: "",
     };
@@ -48,69 +49,100 @@ function School({ school, setSchools }: SchoolFormProps) {
   return (
     <>
       <form action="">
-        <label htmlFor="schoolName">School name:</label>
-        <input
-          type="text"
-          name="schoolName"
-          id="schoolName"
-          value={school.schoolName}
-          onChange={(e) => {
-            setSchools((prevSchools) =>
-              prevSchools.map((s) =>
-                s.UUID === school.UUID
-                  ? { ...s, schoolName: e.target.value }
-                  : s,
-              ),
-            );
+        <div className="inputField">
+          <label htmlFor="schoolName">School name:</label>
+          <input
+            type="text"
+            name="schoolName"
+            id="schoolName"
+            value={school.schoolName}
+            onChange={(e) => {
+              setSchools((prevSchools) =>
+                prevSchools.map((s) =>
+                  s.UUID === school.UUID
+                    ? { ...s, schoolName: e.target.value }
+                    : s,
+                ),
+              );
+            }}
+          />
+        </div>
+        <div className="inputField">
+          <label htmlFor="field">Field of study:</label>
+          <input
+            type="text"
+            name="field"
+            id="field"
+            value={school.field}
+            onChange={(e) => {
+              setSchools((prevSchools) =>
+                prevSchools.map((s) =>
+                  s.UUID === school.UUID ? { ...s, field: e.target.value } : s,
+                ),
+              );
+            }}
+          />
+        </div>
+        <div className="inputField">
+          <label htmlFor="degree">Degree:</label>
+          <input
+            type="text"
+            name="degree"
+            id="degree"
+            value={school.degree}
+            onChange={(e) => {
+              setSchools((prevSchools) =>
+                prevSchools.map((s) =>
+                  s.UUID === school.UUID ? { ...s, degree: e.target.value } : s,
+                ),
+              );
+            }}
+          />
+        </div>
+        <div className="inputField">
+          <label htmlFor="educationStart">Start:</label>
+          <input
+            type="month"
+            name="educationStart"
+            id="educationStart"
+            value={school.educationStart}
+            onChange={(e) => {
+              setSchools((prevSchools) =>
+                prevSchools.map((s) =>
+                  s.UUID === school.UUID
+                    ? { ...s, educationStart: e.target.value }
+                    : s,
+                ),
+              );
+            }}
+          />
+        </div>
+        <div className="inputField">
+          <label htmlFor="educationEnd">End:</label>
+          <input
+            type="month"
+            name="educationEnd"
+            id="educationEnd"
+            value={school.educationEnd}
+            onChange={(e) => {
+              setSchools((prevSchools) =>
+                prevSchools.map((s) =>
+                  s.UUID === school.UUID
+                    ? { ...s, educationEnd: e.target.value }
+                    : s,
+                ),
+              );
+            }}
+          />
+        </div>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            handleRemove();
           }}
-        />
-        <label htmlFor="field">Field of study:</label>
-        <input
-          type="text"
-          name="field"
-          id="field"
-          value={school.field}
-          onChange={(e) => {
-            setSchools((prevSchools) =>
-              prevSchools.map((s) =>
-                s.UUID === school.UUID ? { ...s, field: e.target.value } : s,
-              ),
-            );
-          }}
-        />
-        <label htmlFor="educationStart">Start:</label>
-        <input
-          type="month"
-          name="educationStart"
-          id="educationStart"
-          value={school.educationStart}
-          onChange={(e) => {
-            setSchools((prevSchools) =>
-              prevSchools.map((s) =>
-                s.UUID === school.UUID
-                  ? { ...s, educationStart: e.target.value }
-                  : s,
-              ),
-            );
-          }}
-        />
-        <label htmlFor="educationEnd">End:</label>
-        <input
-          type="month"
-          name="educationEnd"
-          id="educationEnd"
-          value={school.educationEnd}
-          onChange={(e) => {
-            setSchools((prevSchools) =>
-              prevSchools.map((s) =>
-                s.UUID === school.UUID
-                  ? { ...s, educationEnd: e.target.value }
-                  : s,
-              ),
-            );
-          }}
-        />
-        <button onClick={handleRemove}>Remove</button>
+        >
+          Remove
+        </button>
       </form>
     </>
   );

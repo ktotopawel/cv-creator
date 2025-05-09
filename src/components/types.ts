@@ -10,6 +10,7 @@ export type PersonalType = {
   softSkills: string[];
   hardSkills: string[];
   languages: string[];
+  summary: string;
 };
 
 export type SchoolType = {

@@ -113,6 +113,20 @@ export default function Personal({ personalData, setPersonalData }: FormProps) {
           />
         </div>
         <div className="inputField">
+          <label htmlFor="summary">Summary:</label>
+          <textarea
+            name="summary"
+            id="summary"
+            value={personalData.summary}
+            onChange={(e) => {
+              setPersonalData({
+                ...personalData,
+                summary: e.target.value,
+              });
+            }}
+          ></textarea>
+        </div>
+        <div className="inputField">
           <label htmlFor="softSkills">
             Soft skills: <span>(comma-separated list)</span>
           </label>
@@ -125,6 +139,40 @@ export default function Personal({ personalData, setPersonalData }: FormProps) {
               setPersonalData({
                 ...personalData,
                 softSkills: e.target.value.split(", "),
+              });
+            }}
+          />
+        </div>
+        <div className="inputField">
+          <label htmlFor="hardSkills">
+            Hard skills: <span>(comma-separated list)</span>
+          </label>
+          <input
+            type="text"
+            name="hardSkills"
+            id="hardSkills"
+            value={personalData.hardSkills.join(", ")}
+            onChange={(e) => {
+              setPersonalData({
+                ...personalData,
+                hardSkills: e.target.value.split(", "),
+              });
+            }}
+          />
+        </div>
+        <div className="inputField">
+          <label htmlFor="languages">
+            Languages: <span>(comma-separated list)</span>
+          </label>
+          <input
+            type="text"
+            name="languages"
+            id="languages"
+            value={personalData.languages.join(", ")}
+            onChange={(e) => {
+              setPersonalData({
+                ...personalData,
+                languages: e.target.value.split(", "),
               });
             }}
           />
