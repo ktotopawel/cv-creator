@@ -14,12 +14,8 @@ export default function Education({ schools, setSchools }: EducationFormProps) {
       educationStart: "",
       educationEnd: "",
     };
-    schools.push(emptySchool);
+    setSchools((prevSchools) => [...prevSchools, emptySchool]);
     return emptySchool;
-  }
-
-  if (schools.length < 1) {
-    addSchool();
   }
 
   return (
@@ -32,6 +28,7 @@ export default function Education({ schools, setSchools }: EducationFormProps) {
           setSchools={setSchools}
         ></School>
       ))}
+      <button onClick={addSchool}>+ Add School</button>
     </>
   );
 }
@@ -42,6 +39,12 @@ type SchoolFormProps = {
 };
 
 function School({ school, setSchools }: SchoolFormProps) {
+  function handleRemove() {
+    setSchools((prevSchools) =>
+      prevSchools.filter((s) => s.UUID !== school.UUID),
+    );
+  }
+
   return (
     <>
       <form action="">
@@ -107,6 +110,7 @@ function School({ school, setSchools }: SchoolFormProps) {
             );
           }}
         />
+        <button onClick={handleRemove}>Remove</button>
       </form>
     </>
   );

@@ -10,46 +10,125 @@ export default function Personal({ personalData, setPersonalData }: FormProps) {
     <>
       <h2>Personal Info</h2>
       <form action="">
-        <label htmlFor="firstName">First name:</label>
-        <input
-          type="text"
-          id="firstName"
-          name="firstName"
-          value={personalData.firstName}
-          onChange={(e) =>
-            setPersonalData({ ...personalData, firstName: e.target.value })
-          }
-        />
-        <label htmlFor="lastName">Last name:</label>
-        <input
-          type="text"
-          id="lastName"
-          name="lastName"
-          value={personalData.lastName}
-          onChange={(e) => {
-            setPersonalData({ ...personalData, lastName: e.target.value });
-          }}
-        />
-        <label htmlFor="phoneNumber">Phone number:</label>
-        <input
-          type="tel"
-          name="phoneNumber"
-          id="phoneNumber"
-          value={personalData.phoneNumber}
-          onChange={(e) =>
-            setPersonalData({ ...personalData, phoneNumber: e.target.value })
-          }
-        />
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          value={personalData.email}
-          onChange={(e) =>
-            setPersonalData({ ...personalData, email: e.target.value })
-          }
-        />
+        <div className="inputField">
+          <label htmlFor="firstName">First name:</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            value={personalData.firstName}
+            onChange={(e) =>
+              setPersonalData({ ...personalData, firstName: e.target.value })
+            }
+          />
+        </div>
+        <div className="inputField">
+          <label htmlFor="lastName">Last name:</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            value={personalData.lastName}
+            onChange={(e) => {
+              setPersonalData({ ...personalData, lastName: e.target.value });
+            }}
+          />
+        </div>
+        <div className="inputField">
+          <label htmlFor="phoneNumber">Phone number:</label>
+          <input
+            type="tel"
+            name="phoneNumber"
+            id="phoneNumber"
+            value={personalData.phoneNumber}
+            onChange={(e) =>
+              setPersonalData({ ...personalData, phoneNumber: e.target.value })
+            }
+          />
+        </div>
+        <div className="inputField">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={personalData.email}
+            onChange={(e) =>
+              setPersonalData({ ...personalData, email: e.target.value })
+            }
+          />
+        </div>
+        <div className="inputField">
+          <label htmlFor="location">Location:</label>
+          <input
+            type="text"
+            name="location"
+            id="location"
+            value={personalData.location}
+            onChange={(e) =>
+              setPersonalData({ ...personalData, location: e.target.value })
+            }
+          />
+        </div>
+        <div className="inputField">
+          <label htmlFor="jobTitle">Job title:</label>
+          <input
+            type="text"
+            name="jobTitle"
+            id="jobTitle"
+            value={personalData.jobTitle}
+            onChange={(e) => {
+              setPersonalData({ ...personalData, jobTitle: e.target.value });
+            }}
+          />
+        </div>
+        <div className="inputField">
+          <label htmlFor="linkedInAddress">LinkedIn:</label>
+          <input
+            type="text"
+            name="linkedInAddress"
+            id="linkedInAddress"
+            value={personalData.linkedInAddress}
+            onChange={(e) => {
+              setPersonalData({
+                ...personalData,
+                linkedInAddress: e.target.value,
+              });
+            }}
+          />
+        </div>
+        <div className="inputField">
+          <label htmlFor="portfolioAddress">Portfolio:</label>
+          <input
+            type="text"
+            name="portfolioAddress"
+            id="portfolioAddress"
+            value={personalData.portfolioAddress}
+            onChange={(e) => {
+              setPersonalData({
+                ...personalData,
+                portfolioAddress: e.target.value,
+              });
+            }}
+          />
+        </div>
+        <div className="inputField">
+          <label htmlFor="softSkills">
+            Soft skills: <span>(comma-separated list)</span>
+          </label>
+          <input
+            type="text"
+            name="softSkills"
+            id="softSkills"
+            value={personalData.softSkills.join(", ")}
+            onChange={(e) => {
+              setPersonalData({
+                ...personalData,
+                softSkills: e.target.value.split(", "),
+              });
+            }}
+          />
+        </div>
       </form>
     </>
   );

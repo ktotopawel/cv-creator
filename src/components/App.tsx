@@ -10,6 +10,13 @@ export default function App() {
     lastName: "",
     phoneNumber: "",
     email: "",
+    jobTitle: "",
+    linkedInAddress: "",
+    portfolioAddress: "",
+    location: "",
+    softSkills: [],
+    hardSkills: [],
+    languages: [],
   });
 
   const [schools, setSchools] = useState<SchoolType[]>([]);

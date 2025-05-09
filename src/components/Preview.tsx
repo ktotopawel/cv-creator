@@ -1,3 +1,4 @@
+import { Fragment } from "react/jsx-runtime";
 import type { PersonalType, SchoolType, WorkType } from "./types";
 
 type FormProps = {
@@ -23,7 +24,23 @@ export default function Preview({
           {personalData.email}
         </p>
         <h2>Schools:</h2>
-        <p>SchoolName: {schools[0].schoolName}</p>
+        {schools.map((school) => {
+          return (
+            <Fragment key={school.UUID}>
+              <h3>Schoolname:</h3>
+              <p>{school.schoolName}</p>
+            </Fragment>
+          );
+        })}
+        <h2>Workplaces</h2>
+        {workplaces.map((workplace) => {
+          return (
+            <Fragment key={workplace.UUID}>
+              <h3>Workplace Name:</h3>
+              <p>{workplace.workplace}</p>
+            </Fragment>
+          );
+        })}
       </div>
     </>
   );
