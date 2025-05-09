@@ -1,6 +1,7 @@
 import type { PersonalType, SchoolType, WorkType } from "../types";
 import Education from "./Education";
 import Heading from "./Heading";
+import Skills from "./Skills";
 import Work from "./Work";
 
 type FormProps = {
@@ -19,6 +20,11 @@ export default function Preview({
       <Heading personalData={personalData}></Heading>
       <Education schools={schools}></Education>
       <Work workplaces={workplaces}></Work>
+      <Skills
+        softSkills={personalData.softSkills}
+        hardSkills={personalData.hardSkills}
+        languages={personalData.languages}
+      ></Skills>
     </>
   );
 }
