@@ -1,6 +1,6 @@
 import Education from "./Education";
 import Personal from "./Personal";
-import type { PersonalType, SchoolType, Setter, WorkType } from "./types";
+import type { PersonalType, SchoolType, Setter, WorkType } from "../types";
 import Work from "./Work";
 
 type FormProps = {

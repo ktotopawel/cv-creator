@@ -1,4 +1,4 @@
-import type { SchoolType, Setter } from "./types";
+import type { SchoolType, Setter } from "../types";
 
 type EducationFormProps = {
   schools: SchoolType[];

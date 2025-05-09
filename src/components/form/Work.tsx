@@ -1,4 +1,4 @@
-import type { Setter, WorkType } from "./types";
+import type { Setter, WorkType } from "../types";
 
 type WorkFormProps = {
   workplaces: WorkType[];

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Form from "./Form";
+import Form from "./form/Form";
 import "../styles/App.css";
-import Preview from "./Preview";
+import Preview from "./preview/Preview";
 import type { PersonalType, SchoolType, WorkType } from "./types";
 
 export default function App() {

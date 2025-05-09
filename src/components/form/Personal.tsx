@@ -1,4 +1,4 @@
-import type { PersonalType, Setter } from "./types";
+import type { PersonalType, Setter } from "../types";
 
 type FormProps = {
   personalData: PersonalType;
