@@ -14,6 +14,7 @@ This project is a **React** and **TypeScript** application designed to help user
 - **Enhanced Styling**: Improve the overall design and layout for a more polished look.
 - **Custom Fields**: Allow users to add custom fields to their CVs.
 - **Preview Improvements**: Remove the blue preview background when content is empty.
+- **REsponsiveness**: Make the website mobile compatible.
 
 ## Getting Started
 
