@@ -5,6 +5,7 @@
   border-radius: 6px;
   /* aspect-ratio: 1/1.414; */
   max-width: 210mm;
+  position: relative;
 }
 
 .heading {
@@ -114,5 +115,32 @@
     &:last-of-type {
       border-bottom: none;
     }
+  }
+}
+
+.downloadBtn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: 2px solid var(--color-black);
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.25;
+  transition: opacity 100ms linear;
+  border-radius: 5px;
+
+  img {
+    height: 2rem;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
   }
 }
