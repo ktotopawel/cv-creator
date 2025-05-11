@@ -1,4 +1,9 @@
 import type { PersonalType } from "../types";
+import phoneIcon from "../../assets/phone.svg";
+import atIcon from "../../assets/at-sign.svg";
+import locationIcon from "../../assets/map-pin.svg";
+import linkedInIcon from "../../assets/linkedin.svg";
+import portfolioIcon from "../../assets/book-open.svg";
 
 type HeadingProps = {
   personalData: PersonalType;
@@ -22,10 +27,22 @@ export default function Heading({ personalData }: HeadingProps) {
           personalData.location !== "") && (
           <div className="contact">
             {personalData.phoneNumber !== "" && (
-              <span>{personalData.phoneNumber}</span>
+              <span>
+                <img src={phoneIcon} alt="" />
+                {personalData.phoneNumber}
+              </span>
+            )}
+            {personalData.email !== "" && (
+              <span>
+                <img src={atIcon} alt="" />
+                {personalData.email}
+              </span>
             )}
             {personalData.location !== "" && (
-              <span>{personalData.location}</span>
+              <span>
+                <img src={locationIcon} alt="" />
+                {personalData.location}
+              </span>
             )}
           </div>
         )}
@@ -33,10 +50,16 @@ export default function Heading({ personalData }: HeadingProps) {
           personalData.portfolioAddress !== "") && (
           <div className="links">
             {personalData.linkedInAddress !== "" && (
-              <span>{personalData.linkedInAddress}</span>
+              <span>
+                <img src={linkedInIcon} alt="" />
+                {personalData.linkedInAddress}
+              </span>
             )}
             {personalData.portfolioAddress !== "" && (
-              <span>{personalData.portfolioAddress}</span>
+              <span>
+                <img src={portfolioIcon} alt="" />
+                {personalData.portfolioAddress}
+              </span>
             )}
           </div>
         )}

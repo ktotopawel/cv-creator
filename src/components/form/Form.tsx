@@ -2,6 +2,8 @@ import Education from "./Education";
 import Personal from "./Personal";
 import type { PersonalType, SchoolType, Setter, WorkType } from "../types";
 import Work from "./Work";
+import "../../styles/Form.css";
+import { WipeBtn } from "../misc";
 
 type FormProps = {
   personal: PersonalType;
@@ -28,6 +30,11 @@ export default function Form({
       ></Personal>
       <Education schools={schools} setSchools={setSchools}></Education>
       <Work workplaces={workplaces} setWorkplaces={setWorkplaces}></Work>
+      <WipeBtn
+        setPersonalData={setPersonalData}
+        setSchools={setSchools}
+        setWorkplaces={setWorkplaces}
+      ></WipeBtn>
     </>
   );
 }

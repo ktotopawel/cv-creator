@@ -1,0 +1,12 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 100vh;
+}

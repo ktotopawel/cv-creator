@@ -1,4 +1,7 @@
+import { useState } from "react";
 import type { SchoolType, Setter } from "../types";
+import { HideBtn } from "../misc";
+import xBtn from "../../assets/x.svg";
 
 type EducationFormProps = {
   schools: SchoolType[];
@@ -6,6 +9,8 @@ type EducationFormProps = {
 };
 
 export default function Education({ schools, setSchools }: EducationFormProps) {
+  const [isHidden, setIsHidden] = useState(true);
+
   function addSchool() {
     const emptySchool = {
       UUID: crypto.randomUUID(),
@@ -20,17 +25,24 @@ export default function Education({ schools, setSchools }: EducationFormProps) {
   }
 
   return (
-    <>
-      <h2>Education</h2>
-      {Array.from(schools.values()).map((school) => (
-        <School
-          key={school.UUID}
-          school={school}
-          setSchools={setSchools}
-        ></School>
-      ))}
-      <button onClick={addSchool}>+ Add School</button>
-    </>
+    <div className="formSection">
+      <h2>
+        Education
+        <HideBtn isHidden={isHidden} setIsHidden={setIsHidden}></HideBtn>
+      </h2>
+      <div id="educationForm" className={isHidden ? "hidden" : ""}>
+        {Array.from(schools.values()).map((school) => (
+          <School
+            key={school.UUID}
+            school={school}
+            setSchools={setSchools}
+          ></School>
+        ))}
+        <button onClick={addSchool} className="addBtn">
+          + Add School
+        </button>
+      </div>
+    </div>
   );
 }
 
@@ -140,8 +152,9 @@ function School({ school, setSchools }: SchoolFormProps) {
             e.preventDefault();
             handleRemove();
           }}
+          className="removeBtn"
         >
-          Remove
+          <img src={xBtn} alt="delete buton" />
         </button>
       </form>
     </>

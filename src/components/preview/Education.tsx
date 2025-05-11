@@ -8,7 +8,7 @@ export default function Education({ schools }: EducationProps) {
   if (schools.length < 1) return false;
 
   return (
-    <>
+    <div className="education">
       <h2>Education</h2>
       <ul>
         {schools.map((school) => (
@@ -24,6 +24,6 @@ export default function Education({ schools }: EducationProps) {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }

@@ -1,4 +1,7 @@
+import { useState } from "react";
 import type { Setter, WorkType } from "../types";
+import { HideBtn } from "../misc";
+import xBtn from "./../../assets/x.svg";
 
 type WorkFormProps = {
   workplaces: WorkType[];
@@ -6,6 +9,8 @@ type WorkFormProps = {
 };
 
 export default function Work({ workplaces, setWorkplaces }: WorkFormProps) {
+  const [isHidden, setIsHidden] = useState(true);
+
   function addWorkplace() {
     const emptyWorkplace = {
       UUID: crypto.randomUUID(),
@@ -21,24 +26,30 @@ export default function Work({ workplaces, setWorkplaces }: WorkFormProps) {
   }
 
   return (
-    <>
-      <h2>Work experience</h2>
-      {workplaces.map((workplace) => (
-        <Workplace
-          workplace={workplace}
-          setWorkplaces={setWorkplaces}
-          key={workplace.UUID}
-        ></Workplace>
-      ))}
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          addWorkplace();
-        }}
-      >
-        + Add Work
-      </button>
-    </>
+    <div className="formSection">
+      <h2>
+        Work experience
+        <HideBtn isHidden={isHidden} setIsHidden={setIsHidden}></HideBtn>
+      </h2>
+      <div id="workForm" className={isHidden ? "hidden" : ""}>
+        {workplaces.map((workplace) => (
+          <Workplace
+            workplace={workplace}
+            setWorkplaces={setWorkplaces}
+            key={workplace.UUID}
+          ></Workplace>
+        ))}
+        <button
+          className="addBtn"
+          onClick={(e) => {
+            e.preventDefault();
+            addWorkplace();
+          }}
+        >
+          + Add Work
+        </button>
+      </div>
+    </div>
   );
 }
 
@@ -169,8 +180,9 @@ function Workplace({ workplace, setWorkplaces }: WorkplaceFormProps) {
             e.preventDefault();
             handleRemove();
           }}
+          className="removeBtn"
         >
-          Remove
+          <img src={xBtn} alt="delete button" />
         </button>
       </form>
     </>

@@ -7,13 +7,14 @@ type WorkProps = {
 export default function Work({ workplaces }: WorkProps) {
   if (workplaces.length < 1) return false;
   return (
-    <>
+    <div className="workplaces">
       <h2>Work Experience</h2>
       <ul>
         {workplaces.map((workplace) => (
           <li key={workplace.UUID}>
             <h3>
-              {workplace.workplace} <span>{workplace.location}</span>
+              {workplace.workplace}{" "}
+              <span className="workplaceLocation">{workplace.location}</span>
             </h3>
             <p className="position">{workplace.position}</p>
             <p className="responsibilities">{workplace.responsibilities}</p>
@@ -24,6 +25,6 @@ export default function Work({ workplaces }: WorkProps) {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }

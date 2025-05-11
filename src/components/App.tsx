@@ -25,19 +25,25 @@ export default function App() {
 
   return (
     <>
-      <Form
-        personal={personalData}
-        schools={schools}
-        workplaces={workplaces}
-        setPersonalData={setPersonalData}
-        setSchools={setSchools}
-        setWorkplaces={setWorkplaces}
-      ></Form>
-      <Preview
-        personalData={personalData}
-        schools={schools}
-        workplaces={workplaces}
-      ></Preview>
+      <div className="app">
+        <div className="form">
+          <Form
+            personal={personalData}
+            schools={schools}
+            workplaces={workplaces}
+            setPersonalData={setPersonalData}
+            setSchools={setSchools}
+            setWorkplaces={setWorkplaces}
+          ></Form>
+        </div>
+        <div className="preview">
+          <Preview
+            personalData={personalData}
+            schools={schools}
+            workplaces={workplaces}
+          ></Preview>
+        </div>
+      </div>
     </>
   );
 }

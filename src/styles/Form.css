@@ -1,0 +1,103 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0.5rem;
+}
+
+.form > * {
+  min-height: 4rem;
+}
+
+.formSection {
+  background-color: var(--color-lightest-gray);
+  padding: 1rem 2rem;
+  border-radius: 24px;
+  border: 2px solid var(--color-2);
+
+  h2 {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.inputField {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: var(--color-1);
+  font-weight: 900;
+}
+
+label {
+  font-weight: 600;
+}
+
+label > span {
+  color: var(--color-2);
+  filter: saturate(0.5);
+  font-weight: normal;
+}
+
+#personalForm,
+#educationForm,
+#workForm {
+  transition: transform 300ms ease-out;
+  transform-origin: top;
+}
+
+.hidden {
+  transform: scaleY(0);
+  display: none;
+}
+
+input,
+textarea {
+  background-color: var(--color-lightest-gray);
+  border: 1px solid var(--color-black);
+  border-radius: 5px;
+  outline: none;
+
+  &:focus {
+    background: var(--color-light-gray);
+  }
+}
+
+.addBtn {
+  background-color: var(--color-2);
+  color: var(--color-lightest-gray);
+  border: none;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: transform 50ms linear;
+}
+
+form {
+  position: relative;
+}
+
+.removeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+
+  img {
+    filter: var(--filter-color-accent-2);
+  }
+}

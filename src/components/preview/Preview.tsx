@@ -3,6 +3,7 @@ import Education from "./Education";
 import Heading from "./Heading";
 import Skills from "./Skills";
 import Work from "./Work";
+import "../../styles/Preview.css";
 
 type FormProps = {
   personalData: PersonalType;
@@ -18,13 +19,15 @@ export default function Preview({
   return (
     <>
       <Heading personalData={personalData}></Heading>
-      <Education schools={schools}></Education>
-      <Work workplaces={workplaces}></Work>
-      <Skills
-        softSkills={personalData.softSkills}
-        hardSkills={personalData.hardSkills}
-        languages={personalData.languages}
-      ></Skills>
+      <div className="previewContent">
+        <Education schools={schools}></Education>
+        <Work workplaces={workplaces}></Work>
+        <Skills
+          softSkills={personalData.softSkills}
+          hardSkills={personalData.hardSkills}
+          languages={personalData.languages}
+        ></Skills>
+      </div>
     </>
   );
 }
