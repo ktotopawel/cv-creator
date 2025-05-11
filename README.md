@@ -46,4 +46,8 @@ Check out the live demo of the application here: [CV Creator Demo](https://cv-cr
 
 ---
 
+## Demo
+
+Check out the live demo of the application here: [CV Creator Demo](https://cv-creator-7l3.pages.dev/)
+
 Made with ❤️ by [Paweł Juszczak]
