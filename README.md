@@ -1,54 +1,44 @@
-# React + TypeScript + Vite
+# CV Creator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **React** and **TypeScript** application designed to help users create professional CVs with ease.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React & TypeScript**: Built with modern web technologies for a robust and scalable application.
+- **Dynamic CV Creation**: Users can input their details and generate a CV in real-time.
+- **PDF Export**: Download your CV as a PDF (current implementation uses JPG conversion).
 
-## Expanding the ESLint configuration
+## To-Do List
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Improved PDF Download**: Implement a better library for direct PDF rendering instead of JPG conversion.
+- **Enhanced Styling**: Improve the overall design and layout for a more polished look.
+- **Custom Fields**: Allow users to add custom fields to their CVs.
+- **Preview Improvements**: Remove the blue preview background when content is empty.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/cv-creator.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+3. Start the development server:
+
+```bash
+npm start
+```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Made with ❤️ by [Paweł Juszczak]
