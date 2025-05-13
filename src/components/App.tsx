@@ -3,6 +3,7 @@ import Form from "./form/Form";
 import "../styles/App.css";
 import Preview from "./preview/Preview";
 import type { PersonalType, SchoolType, WorkType } from "./types";
+import Header from "./Header";
 
 export default function App() {
   const [personalData, setPersonalData] = useState<PersonalType>({
@@ -25,6 +26,7 @@ export default function App() {
 
   return (
     <>
+      <Header></Header>
       <div className="app">
         <div className="form">
           <Form

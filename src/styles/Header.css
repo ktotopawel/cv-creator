@@ -1,0 +1,14 @@
+header {
+  background: var(--color-1);
+  color: var(--color-lighter-gray);
+  width: 100vw;
+
+  .logo-name {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    height: 4rem;
+  }
+}

@@ -43,10 +43,7 @@ function SkillsSect({ skills }: SkillsSectProps) {
   return (
     <ul>
       {skills.map((skill) => (
-        <li key={skills.indexOf(skill)}>
-          <img src={listPoint} alt="" />
-          {skill}
-        </li>
+        <li key={skills.indexOf(skill)}>{skill}</li>
       ))}
     </ul>
   );

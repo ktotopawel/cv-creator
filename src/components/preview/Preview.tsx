@@ -24,9 +24,9 @@ export default function Preview({
 
   return (
     <>
-      <button onClick={() => toPDF()} className="downloadBtn">
+      {/* <button onClick={() => toPDF()} className="downloadBtn">
         <img src={downloadIcon} alt="download" />
-      </button>
+      </button> */}
       <div ref={targetRef}>
         <Heading personalData={personalData}></Heading>
         <div className="previewContent">
