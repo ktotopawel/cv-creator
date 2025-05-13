@@ -3,8 +3,9 @@
   background: var(--color-white);
   border: 2px solid var(--color-2);
   border-radius: 6px;
-  /* aspect-ratio: 1/1.414; */
+  aspect-ratio: 1/1.414;
   max-width: 210mm;
+  max-height: 297mm;
   position: relative;
 }
 
