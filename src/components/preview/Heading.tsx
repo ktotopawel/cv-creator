@@ -1,9 +1,4 @@
 import type { PersonalType } from "../types";
-import phoneIcon from "../../assets/phone.svg";
-import atIcon from "../../assets/at-sign.svg";
-import locationIcon from "../../assets/map-pin.svg";
-import linkedInIcon from "../../assets/linkedin.svg";
-import portfolioIcon from "../../assets/book-open.svg";
 
 type HeadingProps = {
   personalData: PersonalType;
@@ -27,22 +22,11 @@ export default function Heading({ personalData }: HeadingProps) {
           personalData.location !== "") && (
           <div className="contact">
             {personalData.phoneNumber !== "" && (
-              <span>
-                <img src={phoneIcon} alt="" />
-                {personalData.phoneNumber}
-              </span>
+              <span>{personalData.phoneNumber}</span>
             )}
-            {personalData.email !== "" && (
-              <span>
-                <img src={atIcon} alt="" />
-                {personalData.email}
-              </span>
-            )}
+            {personalData.email !== "" && <span>{personalData.email}</span>}
             {personalData.location !== "" && (
-              <span>
-                <img src={locationIcon} alt="" />
-                {personalData.location}
-              </span>
+              <span>{personalData.location}</span>
             )}
           </div>
         )}
@@ -51,14 +35,16 @@ export default function Heading({ personalData }: HeadingProps) {
           <div className="links">
             {personalData.linkedInAddress !== "" && (
               <span>
-                <img src={linkedInIcon} alt="" />
-                {personalData.linkedInAddress}
+                <a href={personalData.linkedInAddress}>
+                  {personalData.linkedInAddress}
+                </a>
               </span>
             )}
             {personalData.portfolioAddress !== "" && (
               <span>
-                <img src={portfolioIcon} alt="" />
-                {personalData.portfolioAddress}
+                <a href={personalData.portfolioAddress}>
+                  {personalData.portfolioAddress}
+                </a>
               </span>
             )}
           </div>
